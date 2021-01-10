@@ -75,6 +75,22 @@ class RestaurantServiceTest {
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void check_if_the_total_price_returned_is_388_for_first_two_items_selected_from_the_menu(){
+        //The below arrange blocks will create a new list variable and add the two selected menu items inside it
+        //And will also calculate the expected total price for the selected items
+        //Arrange
+        List<Item> selectedMenu = new ArrayList<> ();;
+        selectedMenu.add(restaurant.getMenu().get(0));
+        selectedMenu.add(restaurant.getMenu().get(1));
+        int expectedTotalPrice = selectedMenu.get(0).getPrice() + selectedMenu.get(1).getPrice();
+
+        //Act
+        int actualTotalPrice = service.getTotalPrice(selectedMenu);
+
+        //Assert
+        assertEquals(expectedTotalPrice,actualTotalPrice);
+    }
 
 
 }
