@@ -83,7 +83,7 @@ class RestaurantServiceTest {
         List<Item> selectedMenu = new ArrayList<> ();;
         selectedMenu.add(restaurant.getMenu().get(0));
         selectedMenu.add(restaurant.getMenu().get(1));
-        int expectedTotalPrice = selectedMenu.get(0).getPrice() + selectedMenu.get(1).getPrice();
+        int expectedTotalPrice = selectedMenu.get(0).getPrice() + selectedMenu.get(1).getPrice();  //119 + 269 = 388
 
         //Act
         int actualTotalPrice = service.getTotalPrice(selectedMenu);

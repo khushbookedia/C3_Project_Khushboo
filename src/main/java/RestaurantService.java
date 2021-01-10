@@ -37,4 +37,15 @@ public class RestaurantService {
     }
 
 
+    //The below method will calculate the total price of the selected menu items, passed as a parameter to it.
+    public int getTotalPrice(List<Item> selectedMenu) {
+        int totalPrice = 0;
+
+        for (Item item : selectedMenu) {
+            totalPrice += item.getPrice();
+        }
+        return totalPrice;
+    }
+
+
 }
